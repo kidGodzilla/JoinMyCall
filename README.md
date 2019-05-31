@@ -15,6 +15,8 @@ A web app that requires your colleagues to take a connection/camera/mic test bef
 
 # 📝 License
 
-**GPL © [George Bougakov](https://bygeorgenet.me) and [Kumar Abhirup](https://kumar.now.sh)**
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fgbougakov%2FJoinMyCall.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fgbougakov%2FJoinMyCall?ref=badge_large)
+
+**© [George Bougakov](https://bygeorgenet.me) and [Kumar Abhirup](https://kumar.now.sh)**
 
 _Follow us 👋 **on Twitter**_ →   [![Twitter](https://img.shields.io/twitter/follow/kumar_abhirup.svg?style=social&label=@kumar_abhirup)](https://twitter.com/kumar_abhirup/) [![Twitter](https://img.shields.io/twitter/follow/gbougakov.svg?style=social&label=@gbougakov)](https://twitter.com/gbougakov/) 
