@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <link rel="stylesheet" href="/public/main.css">
+
+  <title>JoinMyCall - Look before you call</title>
+</head>
+
+<body>
+
+  <div class="main" id="app">
+    <img class="logo" src="/public/logo.svg" />
+    <h1>Make your colleagues to take a connection/camera/mic test before joining your call</h1>
+    <form v-on:submit.prevent="genLink">
+      <div class="ui action input">
+        <input type="url" placeholder="https://meet.google.com/cox-mxti-zgs" v-model="enteredLink">
+        <button class="ui right button primary">
+          Generate Link
+        </button>
+      </div>
+    </form>
+    <section class="result marginTop4" v-if="generatedLink">
+      <span class="successText">Your calling link is generated</span>
+      <br /><br />
+      <div class="ui action input">
+        <input type="text" v-bind:value="'https://joinmycall.now.sh/l/' + generatedLink" id="generatedLink">
+        <button class="ui teal right labeled icon button copy-btn" data-clipboard-target="#generatedLink">
+          <i class="copy icon"></i>
+          Copy
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <div class="credits">
+    Maintained by <a href="https://twitter.com/gbougakov" target="_blank" rel="noopener noreferrer">George Bougakov</a>
+    and <a href="https://twitter.com/kumar_abhirup" target="_blank" rel="noopener noreferrer">Kumar Abhirup</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        generatedLink: '',
+        enteredLink: ''
+      },
+      methods: {
+        genLink() {
+          this.generatedLink = btoa(this.enteredLink)
+        }
+      }
+    })
+
+    new ClipboardJS('.copy-btn')
+  </script>
+</body>
+
+</html>

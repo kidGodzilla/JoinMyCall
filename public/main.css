@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+
+body {
+  padding: 20px;
+}
+
+div.main {
+  font-family: 'Arvo', serif !important;
+  position:absolute;
+  width: 100%;
+  text-align: center;
+  top:50%;
+  left:50%;
+  padding: 30px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.marginTop1 {
+  margin-top: 5px;
+}
+
+.marginTop2 {
+  margin-top: 10px;
+}
+
+.marginTop3 {
+  margin-top: 15px;
+}
+
+.marginTop4 {
+  margin-top: 20px;
+}
+
+.marginBottom1 {
+  margin-bottom: 5px;
+}
+
+.marginBottom2 {
+  margin-bottom: 10px;
+}
+
+.marginBottom3 {
+  margin-bottom: 15px;
+}
+
+.marginBottom4 {
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  font-size: 17px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.positive {
+  background: #5ECD71;
+  color: #fff;
+  border-radius: 5px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.negative {
+  font-size: 13px;
+  color: rgba(0,0,0,.3);
+  background: none;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0px auto;
+}
+
+.grid article {
+  width: 100%;
+  padding: 15px;
+}
+
+.grid article img {
+  width: 100%;
+}
+
+figure.audioPlacement {
+  margin-top: 30px !important;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+form div.input {
+  max-width: 900px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px;
+  /* border: 1px solid red; */
+}
+
+form div.input input {
+  padding: 20px !important;
+  font-family: 'Arvo', serif;
+  font-size: 15px;
+}
+
+.credits {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.successText {
+  color: green;
+}
+
+.logo {
+  width: 200px;
+}
+
+@media (max-width: 750px) {
+  article.local {
+    display: none;
+  }
+}

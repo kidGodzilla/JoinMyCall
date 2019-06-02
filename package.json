@@ -1,0 +1,22 @@
+{
+  "name": "joinmycall",
+  "version": "1.0.0",
+  "description": "Make sure you have a good connection before joining a call",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbougakov/JoinMyCall.git"
+  },
+  "author": "George Bougakov <https://bygeorgenet.me>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/gbougakov/JoinMyCall/issues"
+  },
+  "homepage": "https://github.com/gbougakov/JoinMyCall#readme"
+}
