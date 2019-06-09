@@ -4,6 +4,7 @@
 
 [![emoji-log](https://cdn.rawgit.com/ahmadawais/stuff/ca97874/emoji-log/flat.svg)](https://github.com/ahmadawais/Emoji-Log/)
 [![xo](https://img.shields.io/badge/code%20style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
+[![Build Status](https://travis-ci.com/gbougakov/JoinMyCall.svg?branch=master)](https://travis-ci.com/gbougakov/JoinMyCall)
 
 </div>
 
