@@ -10,7 +10,14 @@
 # 🤙 `JoinMyCall`
 A web app that requires your colleagues to take a connection/camera/mic test before joining your call. Just paste your call join link and our app will generate a link to a connection test that will then automatically redirect them to your call.
 
+# Setting up a development environment
+## Prerequisites 
+Node.js, NPM and [Now CLI](https://github.com/zeit/now-cli)
 
+## Running a development server
+```bash
+now dev
+```
 
 
 # 📝 License

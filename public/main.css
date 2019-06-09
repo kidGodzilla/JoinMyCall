@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif !important; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif !important; }
+}
 
 body {
   padding: 20px;
 }
 
 div.main {
-  font-family: 'Arvo', serif !important;
   position:absolute;
   width: 100%;
   text-align: center;
@@ -110,7 +113,6 @@ form div.input {
 
 form div.input input {
   padding: 20px !important;
-  font-family: 'Arvo', serif;
   font-size: 15px;
 }
 
@@ -131,5 +133,8 @@ form div.input input {
 @media (max-width: 750px) {
   article.local {
     display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
