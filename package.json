@@ -7,13 +7,14 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "xo"
+    "test": "xo",
+    "dev": "NODE_ENV=development node startClient.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gbougakov/JoinMyCall.git"
   },
-  "author": "George Bougakov <https://bygeorgenet.me>",
+  "author": "George Bougakov <https://bygeorgenet.me> | Kumar Abhirup <https://kumar.now.sh>",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/gbougakov/JoinMyCall/issues"
