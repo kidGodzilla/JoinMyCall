@@ -15,7 +15,7 @@ app.get('/l/:base64String', (req, res) => {
   if (base64Regex.test(base64String)) {
     return res.sendFile(path.join(__dirname, 'public', 'guest.html'))
   }
-  
+
   res.status(404).send('Not Found')
 })
 
