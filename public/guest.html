@@ -1,1 +1,85 @@
-lol
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <link rel="stylesheet" href="/public/main.css">
+
+  <title>You've been invited to a call</title>
+</head>
+
+<body>
+
+  <div class="main" id="app">
+    <!-- Start screen -->
+    <div v-if="currentScreen === 'start'">
+      <h2>You have been invited to a video call</h2>
+      <span>Do you want to run a quick connection test before joining?</span>
+      <section class="marginTop4">
+        <button class="button positive marginTop1" v-on:click="currentScreen = 'step1'">Yes, sure!</button>
+        <br />
+        <a v-bind:href="callLink" class="button negative marginTop1">Just take me to the call</a>
+      </section>
+    </div>
+
+    <!-- Step 1 -->
+    <div v-if="currentScreen === 'step1'">
+      <h1>Is the picture quality okay?</h1>
+      <div class="grid marginTop4">
+        <article class="local">
+          <h4>Local View</h4>
+          <img src="https://via.placeholder.com/500x350" />
+        </article>
+        <article class="remote">
+          <h4>Remote View</h4>
+          <img src="https://via.placeholder.com/500x350" />
+        </article>
+      </div>
+      <section class="marginTop4">
+        <button class="button positive marginTop1" v-on:click="currentScreen = 'step2'">Yes, it is!</button>
+        <br />
+        <button class="button negative marginTop1" v-on:click="currentScreen = 'start'">⬅ Take me back</button>
+      </section>
+    </div>
+
+    <!-- Step 2 -->
+    <div v-if="currentScreen === 'step2'">
+      <h2>Can you hear yourself?</h2>
+      <figure class="audioPlacement">
+          <audio
+              controls
+              src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+                  Your browser does not support the
+                  <code>audio</code> element.
+          </audio>
+      </figure>
+      <section class="marginTop4">
+        <button class="button positive marginTop1" v-on:click="currentScreen = 'done'">Yes, I can!</button>
+        <br />
+        <button class="button negative marginTop1" v-on:click="currentScreen = 'step1'">⬅ Take me back</button>
+      </section>
+    </div>
+
+    <!-- Done -->
+    <div v-if="currentScreen === 'done'">
+        <div class="main">
+            <h1>You're all set!</h1>
+            <br />
+            <section class="marginTop4">
+              <a v-bind:href="callLink" class="button positive marginTop1 bold">Join the call</a>
+              <br />
+              <button class="button negative marginTop1" v-on:click="currentScreen = 'step2'">⬅ Take me back</button>
+            </section>
+          </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="/public/guest.js"></script>
+</body>
+
+</html>

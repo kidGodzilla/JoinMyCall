@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/gbougakov/JoinMyCall/issues"
   },
-  "homepage": "https://github.com/gbougakov/JoinMyCall#readme"
+  "xo": {
+    "semicolon": false,
+    "space": 2
+  },
+  "homepage": "https://github.com/gbougakov/JoinMyCall#readme",
+  "devDependencies": {
+    "xo": "^0.24.0"
+  }
 }

@@ -19,9 +19,9 @@
     <h1>Make your colleagues to take a connection/camera/mic test before joining your call</h1>
     <form v-on:submit.prevent="genLink">
       <div class="ui action input">
-        <input type="url" placeholder="https://meet.google.com/cox-mxti-zgs" v-model="enteredLink">
+        <input type="url" placeholder="Call link (e.g. https://meet.google.com/xxx-xxxx-xxx, https://zoom.us/j/1234567890)" v-model="enteredLink">
         <button class="ui right button primary">
-          Generate Link
+          Generate
         </button>
       </div>
     </form>
@@ -45,22 +45,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: {
-        generatedLink: '',
-        enteredLink: ''
-      },
-      methods: {
-        genLink() {
-          this.generatedLink = btoa(this.enteredLink)
-        }
-      }
-    })
-
-    new ClipboardJS('.copy-btn')
-  </script>
+  <script src="/public/host.js"></script>
 </body>
 
 </html>
