@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "xo",
-    "dev:client": "NODE_ENV=development nodemon startClient.js",
-    "start:client": "NODE_ENV=production node startClient.js"
+    "dev:client": "NODE_ENV=development nodemon start-client.js",
+    "start:client": "NODE_ENV=production node start-client.js"
   },
   "repository": {
     "type": "git",
