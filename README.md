@@ -17,7 +17,8 @@ Node.js, NPM and [Now CLI](https://github.com/zeit/now-cli)
 
 ## Running a development server
 ```bash
-now dev
+$ npm i
+$ npm run dev:client
 ```
 
 
