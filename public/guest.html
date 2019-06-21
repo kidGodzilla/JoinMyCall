@@ -32,11 +32,11 @@
       <div class="grid marginTop4">
         <article class="local">
           <h4>Local View</h4>
-          <img src="https://via.placeholder.com/500x350" />
+          <video id="localVideo" autoplay playsinline webkit-playsinline>
         </article>
         <article class="remote">
           <h4>Remote View</h4>
-          <img src="https://via.placeholder.com/500x350" />
+          <video id="remoteVideo" autoplay playsinline webkit-playsinline>
         </article>
       </div>
       <section class="marginTop4">
@@ -79,6 +79,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
   <script src="/public/guest.js"></script>
 </body>
 
