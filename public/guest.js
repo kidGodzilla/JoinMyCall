@@ -22,7 +22,7 @@ new Vue({
         const mediaStream = await navigator.mediaDevices.getUserMedia({audio: true, video: true})
         document.querySelector('#localVideo').srcObject = mediaStream
         document.querySelector('#localVideo').play()
-        const id = document.getElementById('remoteVideoFrame').contentWindow.getID()
+        const id = document.querySelector('#remoteVideoFrame').contentWindow.getID()
         console.log(id)
         conn = peer.call(id, mediaStream)
         conn.on('stream', stream => {
@@ -32,10 +32,8 @@ new Vue({
           document.querySelector('#remoteVideo').srcObject = stream
           document.querySelector('#remoteVideo').play()
         })
-      } else {
-        if (conn.open) {
-          conn.close()
-        }
+      } else if (conn.open) {
+        conn.close()
       }
     }
   }
