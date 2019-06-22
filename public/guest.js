@@ -1,21 +1,8 @@
 /* global Vue, atob, window, Peer, document, navigator */
-
 const peer = new Peer()
 
 peer.on('open', id => {
   console.log('My peer ID is: ' + id)
-})
-
-peer.on('call', async call => {
-  // Answer the call, providing our mediaStream
-  console.log(call)
-  const mediaStream = await navigator.mediaDevices.getUserMedia({audio: false, video: true})
-  call.answer(mediaStream)
-  console.log(call.remoteStream)
-  setTimeout(() => {
-    document.querySelector('#remoteVideo').srcObject = call.remoteStream
-    console.log(call.remoteStream)
-  }, 1000)
 })
 
 let conn = {}
@@ -32,11 +19,12 @@ new Vue({
   watch: {
     async currentScreen() {
       if (this.currentScreen === 'step1') {
-        const mediaStream = await navigator.mediaDevices.getUserMedia({audio: false, video: true})
+        const mediaStream = await navigator.mediaDevices.getUserMedia({audio: true, video: true})
         document.querySelector('#localVideo').srcObject = mediaStream
         document.querySelector('#localVideo').play()
-        conn = peer.call(peer.id, mediaStream)
-
+        const id = document.getElementById('remoteVideoFrame').contentWindow.getID()
+        console.log(id)
+        conn = peer.call(id, mediaStream)
         conn.on('stream', stream => {
           console.log(stream)
           // `stream` is the MediaStream of the remote peer.
@@ -44,6 +32,10 @@ new Vue({
           document.querySelector('#remoteVideo').srcObject = stream
           document.querySelector('#remoteVideo').play()
         })
+      } else {
+        if (conn.open) {
+          conn.close()
+        }
       }
     }
   }

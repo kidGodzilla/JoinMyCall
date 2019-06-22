@@ -1,0 +1,34 @@
+<style>
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<video id="remoteVideo" autoplay playsinline webkit-playsinline></video>
+
+<script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
+<script>
+const peer = new Peer()
+
+peer.on('open', id => {
+  console.log('My peer ID is: ' + id)
+})
+
+peer.on('call', async call => {
+  // Answer the call, providing our mediaStream
+  console.log(call)
+  const mediaStream = await navigator.mediaDevices.getUserMedia({audio: true, video: true})
+  call.answer(mediaStream)
+  call.on('stream', stream => {
+    document.querySelector('#remoteVideo').srcObject = stream
+  })
+})
+
+window.getID = () => {
+  return peer.id
+}
+</script>

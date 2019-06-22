@@ -18,7 +18,8 @@
     <!-- Start screen -->
     <div v-if="currentScreen === 'start'">
       <h2>You have been invited to a video call</h2>
-      <span>Do you want to run a quick connection test before joining?</span>
+      <span>Do you want to run a quick connection test before joining? We recommend connecting your headphones before
+        the test to minimise echo.</span>
       <section class="marginTop4">
         <button class="button positive marginTop1" v-on:click="currentScreen = 'step1'">Yes, sure!</button>
         <br />
@@ -36,18 +37,19 @@
         </article>
         <article class="remote">
           <h4>Remote View</h4>
-          <video id="remoteVideo" autoplay playsinline webkit-playsinline>
+          <iframe src="/public/remoteVideo.html" id="remoteVideoFrame">Wow, what browser are you using?? IE6??? UPDATE
+            PLEASE!!!!!!!</iframe>
         </article>
       </div>
       <section class="marginTop4">
-        <button class="button positive marginTop1" v-on:click="currentScreen = 'step2'">Yes, it is!</button>
-        <br />
-        <button class="button negative marginTop1" v-on:click="currentScreen = 'start'">⬅ Take me back</button>
+        <button class="button positive marginTop1" v-on:click="currentScreen = 'done'">Yes, it is!</button>
+        <!--<br />
+        <button class="button negative marginTop1" v-on:click="currentScreen = 'start'">⬅ Take me back</button>-->
       </section>
     </div>
 
-    <!-- Step 2 -->
-    <div v-if="currentScreen === 'step2'">
+    <!-- Step 2 -- Not needed -->
+    <!--<div v-if="currentScreen === 'step2'">
       <h2>Can you hear yourself?</h2>
       <figure class="audioPlacement">
           <audio
@@ -62,19 +64,19 @@
         <br />
         <button class="button negative marginTop1" v-on:click="currentScreen = 'step1'">⬅ Take me back</button>
       </section>
-    </div>
+    </div>-->
 
     <!-- Done -->
     <div v-if="currentScreen === 'done'">
-        <div class="main">
-            <h1>You're all set!</h1>
-            <br />
-            <section class="marginTop4">
-              <a v-bind:href="callLink" class="button positive marginTop1 bold">Join the call</a>
-              <br />
-              <button class="button negative marginTop1" v-on:click="currentScreen = 'step2'">⬅ Take me back</button>
-            </section>
-          </div>
+      <div class="main">
+        <h1>You're all set!</h1>
+        <br />
+        <section class="marginTop4">
+          <a v-bind:href="callLink" class="button positive marginTop1 bold">Join the call</a>
+          <!--<br />
+          <button class="button negative marginTop1" v-on:click="currentScreen = 'step1'">⬅ Take me back</button>-->
+        </section>
+      </div>
     </div>
   </div>
 

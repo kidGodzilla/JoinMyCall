@@ -95,6 +95,12 @@ div.main {
   width: 100%;
 }
 
+.grid article iframe {
+  width: 100%;
+  height: calc(100% - 10%);
+  border: none;
+}
+
 figure.audioPlacement {
   margin-top: 30px !important;
 }
