@@ -43,11 +43,11 @@
       <div class="grid marginTop4">
         <article class="local">
           <h4>Local View</h4>
-          <video id="localVideo" autoplay playsinline webkit-playsinline>
+          <video id="localVideo" class="nodarkmode" autoplay playsinline webkit-playsinline>
         </article>
         <article class="remote">
           <h4>Remote View</h4>
-          <iframe src="/public/remoteVideo.html" id="remoteVideoFrame">Wow, what browser are you using?? IE6??? UPDATE
+          <iframe src="/public/remoteVideo.html" class="nodarkmode" id="remoteVideoFrame">Wow, what browser are you using?? IE6??? UPDATE
             PLEASE!!!!!!!</iframe>
         </article>
       </div>
@@ -89,6 +89,9 @@
       </div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.3.4/lib/darkmode-js.min.js"></script>
+  <script src="/public/darkMode.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
