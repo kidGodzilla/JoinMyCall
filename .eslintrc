@@ -1,10 +1,12 @@
 {
   "extends": "xo",
+  "plugins": [
+    "html",
+    "unicorn"
+  ],
   "rules": {
     "semi": [2, "never"],
-    "indent": [2, 2]
-  },
-  "plugins": [
-    "html"
-  ]
+    "indent": [2, 2],
+    "unicorn/filename-case": "error"
+  }
 }
