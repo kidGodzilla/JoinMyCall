@@ -6,7 +6,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "xo",
+    "test": "eslint .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "dev:client": "NODE_ENV=development nodemon start-client.js",
     "start:client": "NODE_ENV=production node start-client.js"
   },
@@ -19,14 +21,13 @@
   "bugs": {
     "url": "https://github.com/gbougakov/JoinMyCall/issues"
   },
-  "xo": {
-    "semicolon": false,
-    "space": 2
-  },
   "homepage": "https://github.com/gbougakov/JoinMyCall#readme",
   "devDependencies": {
-    "nodemon": "^1.19.1",
-    "xo": "^0.24.0"
+    "eslint": "^6.0.1",
+    "eslint-config-xo": "^0.26.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-unicorn": "^9.1.1",
+    "nodemon": "^1.19.1"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

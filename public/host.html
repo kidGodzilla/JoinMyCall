@@ -14,11 +14,16 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80291721-8"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    /* global window, dataLayer */
+    window.dataLayer = window.dataLayer || []
 
-    gtag('config', 'UA-80291721-8');
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+
+    gtag('js', new Date())
+
+    gtag('config', 'UA-80291721-8')
   </script>
 </head>
 
@@ -29,7 +34,9 @@
     <h1>Make your colleagues to take a connection/camera/mic test before joining your call</h1>
     <form v-on:submit.prevent="genLink">
       <div class="ui action input">
-        <input type="url" placeholder="Call link (e.g. https://meet.google.com/xxx-xxxx-xxx, https://zoom.us/j/1234567890)" v-model="enteredLink">
+        <input type="url"
+          placeholder="Call link (e.g. https://meet.google.com/xxx-xxxx-xxx, https://zoom.us/j/1234567890)"
+          v-model="enteredLink">
         <button class="ui right button primary">
           Generate
         </button>
