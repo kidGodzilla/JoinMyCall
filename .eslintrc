@@ -1,0 +1,10 @@
+{
+  "extends": "xo",
+  "rules": {
+    "semi": [2, "never"],
+    "indent": [2, 2]
+  },
+  "plugins": [
+    "html"
+  ]
+}
