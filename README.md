@@ -21,6 +21,11 @@ $ npm i
 $ npm run dev:client
 ```
 
+## Linting
+- Install ESLint and Prettier VSCode extensions.
+- Run `npm i` command.
+- Now you no more need to make extraneous commits that are made to fix linting errors. Let VSCode fix things automatically for you.
+
 
 # 📝 License
 
