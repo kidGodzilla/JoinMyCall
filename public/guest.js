@@ -17,9 +17,9 @@ new Vue({
     conn: null
   },
   watch: {
-    async currentScreen() {
+    currentScreen() {
       if (this.currentScreen === 'step1') {
-        setTimeout(() => {
+        setTimeout(async () => {
           const mediaStream = await navigator.mediaDevices.getUserMedia({audio: true, video: true})
           document.querySelector('#localVideo').srcObject = mediaStream
           document.querySelector('#localVideo').play()
