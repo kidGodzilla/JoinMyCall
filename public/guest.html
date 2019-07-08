@@ -73,9 +73,8 @@
       <!-- / CONDITIONAL RENDERING -->
 
       <section class="marginTop4">
-        <button class="button positive marginTop1" v-on:click="currentScreen = 'done'"
-          v-bind:disabled="loading ? true : false">Yes, it
-          is!</button>
+        <button class="button positive marginTop1" v-show="loading === false" v-on:click="currentScreen = 'done'">Yes,
+          it is!</button>
         <br />
         <button class="button negative marginTop1" v-on:click="currentScreen = 'start'">⬅ Take me back</button>
       </section>
