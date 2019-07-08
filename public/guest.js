@@ -22,7 +22,13 @@ new Vue({
       if (this.currentScreen === 'step1') {
         this.loading = true // Start loading
         setTimeout(async () => {
-          const mediaStream = await navigator.mediaDevices.getUserMedia({audio: true, video: true})
+          const mediaStream = await navigator
+            .mediaDevices
+            .getUserMedia({audio: true, video: true})
+            .catch(() => {
+              // Realize that a user disallowed us camera access
+              this.loading = 'NOTALLOWED'
+            })
           document.querySelector('#localVideo').srcObject = mediaStream
           document.querySelector('#localVideo').play()
           const id = document.querySelector('#remoteVideoFrame').contentWindow.getID()
