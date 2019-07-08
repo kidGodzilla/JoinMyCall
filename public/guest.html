@@ -45,7 +45,9 @@
     <!-- Step 1 -->
     <div v-if="currentScreen === 'step1'">
       <h1>Is the picture and audio quality okay?</h1>
-      <div class="grid marginTop4">
+
+      <!-- CONDITIONAL RENDERING - Load video when loading process complete -->
+      <div v-show="loading === false" class="grid marginTop4">
         <article class="local">
           <h4>Local View</h4>
           <video id="localVideo" autoplay playsinline webkit-playsinline>
@@ -56,6 +58,11 @@
             PLEASE!!!!!!!</iframe>
         </article>
       </div>
+      <div v-show="loading === true" class="marginTop4">
+        <h1>Loading...</h1>
+      </div>
+      <!-- / CONDITIONAL RENDERING -->
+
       <section class="marginTop4">
         <button class="button positive marginTop1" v-on:click="currentScreen = 'done'">Yes, it is!</button>
         <br />
