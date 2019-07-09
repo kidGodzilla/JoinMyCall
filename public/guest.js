@@ -14,22 +14,30 @@ new Vue({
   data: {
     currentScreen: 'start',
     callLink: atob(window.location.pathname.split('/')[2]), // Get the call link from our magic link
-    conn: null
+    conn: null,
+    loading: null
   },
   watch: {
     currentScreen() {
       if (this.currentScreen === 'step1') {
+        this.loading = true // Start loading
         setTimeout(async () => {
-          const mediaStream = await navigator.mediaDevices.getUserMedia({audio: true, video: true})
+          const mediaStream = await navigator
+            .mediaDevices
+            .getUserMedia({audio: true, video: true})
+            .catch(() => {
+              // Realize that a user disallowed us camera access
+              this.loading = 'NOTALLOWED'
+            })
           document.querySelector('#localVideo').srcObject = mediaStream
           document.querySelector('#localVideo').play()
           const id = document.querySelector('#remoteVideoFrame').contentWindow.getID()
           console.log(id)
           conn = peer.call(id, mediaStream)
           conn.on('stream', stream => {
-            console.log(stream)
             // `stream` is the MediaStream of the remote peer.
-            // Here you'd add it to an HTML video/canvas element.
+            console.log(stream)
+            this.loading = false // Show the MediaStream!
             document.querySelector('#remoteVideo').srcObject = stream
             document.querySelector('#remoteVideo').play()
           })

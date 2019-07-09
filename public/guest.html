@@ -45,7 +45,9 @@
     <!-- Step 1 -->
     <div v-if="currentScreen === 'step1'">
       <h1>Is the picture and audio quality okay?</h1>
-      <div class="grid marginTop4">
+
+      <!-- CONDITIONAL RENDERING - Load video when loading process complete -->
+      <div v-show="loading === false" class="grid marginTop4">
         <article class="local">
           <h4>Local View</h4>
           <video id="localVideo" autoplay playsinline webkit-playsinline>
@@ -56,8 +58,23 @@
             PLEASE!!!!!!!</iframe>
         </article>
       </div>
+      <div v-show="loading === 'NOTALLOWED'" class="marginTop4">
+        <h3 style="font-weight: 700; color: red;">You need to get us your Camera access for checking the quality of
+          connection</h3>
+        <br />
+        <img src="https://media2.giphy.com/media/5tkRfI2ZGrEKBgctes/giphy.gif"
+          alt="You need to allow us your camera and sound access!" width="350" />
+      </div>
+      <div v-show="loading === true" class="marginTop4">
+        <span style="text-transform: uppercase">Loading...</span>
+        <br />
+        <img src="https://ui-ex.com/images/background-transparent-loading-3.gif" alt="Loading the Media!" width="130" />
+      </div>
+      <!-- / CONDITIONAL RENDERING -->
+
       <section class="marginTop4">
-        <button class="button positive marginTop1" v-on:click="currentScreen = 'done'">Yes, it is!</button>
+        <button class="button positive marginTop1" v-show="loading === false" v-on:click="currentScreen = 'done'">Yes,
+          it is!</button>
         <br />
         <button class="button negative marginTop1" v-on:click="currentScreen = 'start'">⬅ Take me back</button>
       </section>
