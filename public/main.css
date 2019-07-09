@@ -1,7 +1,13 @@
 @import url('https://rsms.me/inter/inter.css');
-html { font-family: 'Inter', sans-serif !important; }
+
+html {
+  font-family: 'Inter', sans-serif !important;
+}
+
 @supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif !important; }
+  html {
+    font-family: 'Inter var', sans-serif !important;
+  }
 }
 
 body {
@@ -9,15 +15,15 @@ body {
 }
 
 div.main {
-  position:absolute;
+  position: absolute;
   width: 100%;
   text-align: center;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   padding: 30px;
   -ms-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .marginTop1 {
@@ -70,7 +76,7 @@ div.main {
 
 .negative {
   font-size: 13px;
-  color: rgba(0,0,0,.3);
+  color: rgba(0, 0, 0, .3);
   background: none;
   font-weight: 700;
 }
@@ -140,7 +146,27 @@ form div.input input {
   article.local {
     display: none;
   }
+
   .grid {
     grid-template-columns: 1fr;
+  }
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
