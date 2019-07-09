@@ -49,7 +49,7 @@
         <input type="text" v-bind:value="'https://joinmycall.now.sh/l/' + generatedLink" id="generatedLink">
         <button class="ui teal right labeled icon button copy-btn" data-clipboard-target="#generatedLink">
           <i class="copy icon"></i>
-          Copy
+          {{ copyStatus }}
         </button>
       </div>
     </section>
