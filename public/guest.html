@@ -45,19 +45,35 @@
     <!-- Step 1 -->
     <div v-if="currentScreen === 'step1'">
       <h1>Is the picture and audio quality okay?</h1>
-      <div class="grid marginTop4">
+
+      <!-- CONDITIONAL RENDERING - Load video when loading process complete -->
+      <div v-show="loading === false" class="grid marginTop4">
         <article class="local">
           <h4>Local View</h4>
-          <span class="nodarkmode darkmode-ignore"><video id="localVideo" autoplay playsinline webkit-playsinline></span>
+          <span class="nodarkmode darkmode-ignore"><video id="localVideo" autoplay playsinline
+              webkit-playsinline></span>
         </article>
         <article class="remote">
           <h4>Remote View</h4>
-          <span class="nodarkmode darkmode-ignore"><iframe src="/public/remoteVideo.html" id="remoteVideoFrame">Wow, what browser are you using?? IE6??? UPDATE
-            PLEASE!!!!!!!</iframe></span>
+          <iframe src="/public/remote-video.html" id="remoteVideoFrame">Wow, what browser are you using?? IE6??? UPDATE
+            PLEASE!!!!!!!</iframe>
         </article>
       </div>
+      <div v-show="loading === 'NOTALLOWED'" class="marginTop4">
+        <h3 style="font-weight: 700; color: red;">Sorry, but without camera access we can't run a connection test 😀
+        </h3>
+      </div>
+      <div v-show="loading === true" class="marginTop4">
+        <span style="text-transform: uppercase"><strong>Loading</strong> Webcam & Audio</span>
+        <center>
+          <div class="loader" style="margin-top: 20px;"></div>
+        </center>
+      </div>
+      <!-- / CONDITIONAL RENDERING -->
+
       <section class="marginTop4">
-        <button class="button positive marginTop1" v-on:click="currentScreen = 'done'">Yes, it is!</button>
+        <button class="button positive marginTop1" v-show="loading === false" v-on:click="currentScreen = 'done'">Yes,
+          it is!</button>
         <br />
         <button class="button negative marginTop1" v-on:click="currentScreen = 'start'">⬅ Take me back</button>
       </section>

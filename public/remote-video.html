@@ -8,7 +8,7 @@
   }
 </style>
 
-<video id="remoteVideo" autoplay playsinline webkit-playsinline></video>
+<video id="remoteVideo" autoplay playsinline webkit-playsinline muted></video>
 
 <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
 <script>
@@ -28,7 +28,9 @@
     })
     call.answer(mediaStream)
     call.on('stream', stream => {
+      console.log(stream)
       document.querySelector('#remoteVideo').srcObject = stream
+      document.querySelector('#remoteVideo').play()
     })
   })
 
