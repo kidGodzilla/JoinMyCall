@@ -10,6 +10,16 @@ html {
   }
 }
 
+
+.darkmode--activated .nodarkmode {
+  mix-blend-mode: difference !important;
+  isolation: isolate !important;
+}
+
+.darkmode-layer, .darkmode-toggle {
+  z-index: 500;
+}
+
 body {
   padding: 20px;
 }
