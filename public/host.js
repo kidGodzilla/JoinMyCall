@@ -12,9 +12,9 @@ new Vue({
       this.copyStatus = 'Copy' // Set status to default after every new generated link
       let clipboard = new ClipboardJS('.copy-btn')
       this.generatedLink = btoa(this.enteredLink)
-      clipboard.on('success', () => {
+      /*clipboard.on('success', () => {
         this.copyStatus = 'Copied'
-      })
+      })*/ // There were some issues with the clipboard on iOS 9
     }
   }
 })
