@@ -28,7 +28,9 @@
     })
     call.answer(mediaStream)
     call.on('stream', stream => {
+      console.log(stream)
       document.querySelector('#remoteVideo').srcObject = stream
+      document.querySelector('#remoteVideo').play()
     })
   })
 
