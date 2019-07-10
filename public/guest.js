@@ -38,8 +38,8 @@ new Vue({
             // `stream` is the MediaStream of the remote peer.
             console.log(stream)
             this.loading = false // Show the MediaStream!
-            document.querySelector('#remoteVideo').srcObject = stream
-            document.querySelector('#remoteVideo').play()
+            // Document.querySelector('#remoteVideo').srcObject = stream
+            // Document.querySelector('#remoteVideo').play()
           })
         }, 5000)
       } else if (conn.open) {
