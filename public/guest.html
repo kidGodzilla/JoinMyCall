@@ -31,7 +31,7 @@
 
   <div class="main" id="app">
     <!-- Start screen -->
-    <div v-if="currentScreen === 'start'">
+    <div v-if="currentScreen === 'start' && !isMobile">
       <h2>You have been invited to a video call</h2>
       <span>Do you want to run a quick connection test before joining? We recommend connecting your headphones before
         the test to minimise echo.</span>
@@ -39,6 +39,14 @@
         <button class="button positive marginTop1" v-on:click="currentScreen = 'step1'">Yes, sure!</button>
         <br />
         <a v-bind:href="callLink" class="button negative marginTop1">Just take me to the call</a>
+      </section>
+    </div>
+
+    <div v-if="isMobile">
+      <h2>You have been invited to a video call</h2>
+      <span>Click the button below to join it. The connection test is unavailable on mobile.</span>
+      <section class="marginTop4">
+        <a v-bind:href="callLink" class="button positive marginTop1">Join call</a>
       </section>
     </div>
 

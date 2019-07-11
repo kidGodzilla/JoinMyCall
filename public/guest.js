@@ -15,7 +15,8 @@ new Vue({
     currentScreen: 'start',
     callLink: atob(window.location.pathname.split('/')[2]), // Get the call link from our magic link
     conn: null,
-    loading: null
+    loading: null,
+    isMobile: (typeof window.orientation !== 'undefined') || (navigator.userAgent.indexOf('IEMobile') !== -1)
   },
   watch: {
     currentScreen() {
