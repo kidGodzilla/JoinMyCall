@@ -5,6 +5,6 @@
   ],
   "routes": [
     { "src": "/", "dest": "/public/host.html" },
-    { "src": "\/l\/(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)", "dest": "/public/guest.html"}
+    { "src": "\/l\/(.*)", "dest": "/public/guest.html"}
   ]
 }
